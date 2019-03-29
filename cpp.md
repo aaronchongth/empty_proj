@@ -36,4 +36,17 @@ modifier**, hence try to align :point_left:
 
 - **Braces**, just don't cuddle for anything, no one can complain about it.
 
-- 
+- For small executables, avoid throwing exceptions, it will probably generate
+  lots of noise over directions that will be printed for the user.
+
+- Use `cxxopts` if possible, header-only library for executable options and
+  arguments, love it
+
+- Remember to use `override` if the object is written intended for final usage,
+  `virtual` if there is a possibility of future child classes
+
+- Generally people prefer `const T` instead of `T const`. `const` applies to
+  whatever type is on its left, unless there is none, however `T const` is not
+very readable.
+
+ 
