@@ -8,5 +8,9 @@ project(playground C CXX)
 set(CMAKE_BINARY_DIR "${CMAKE_SOURCE_DIR}/bin")
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
+# libraries
+add_subdirectory(src/djikstra)
 
-add_subdirectory(src)
+# executables
+add_subdirectory(src/templates)
+
