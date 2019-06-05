@@ -6,14 +6,16 @@ class Episode:
     actions = []
 
 
-class MonteCarloExploring:
-    def __init__(self, n_states, n_actions, rewards, discount=0.9):
+class OnPolicyMonteCarlo:
+    def __init__(self, n_states, n_actions, rewards, discount=0.9, 
+                 epsilon=0.05):
         self.n_states = n_states
         self.n_actions = n_actions
         self.action_value = np.random.rand(n_states, n_actions)
 
-        self.greedy_policy = np.zeros(n_states, np.int32)
-        self.greedy_policy_from_action_value()
+        self.epsilon = epsilon
+        self.soft_policy = np.zeros(n_states, n_actions)
+        self.soft_policy_from_action_value()
 
         self.start_state = 0
         self.end_state = n_states - 1
@@ -30,26 +32,23 @@ class MonteCarloExploring:
                 curr_state_list.append([])
             self.returns.append(curr_state_list)
 
+      
+    def soft_policy_from_action_value(self):
+        for s in range(self.n_states):
+            curr_row = self.action_value[s]
+            greedy_action = np.argmax(curr_row)
 
-    def greedy_policy_from_action_value(self):
-        for r in range(self.action_value.shape[0]):
-            curr_row = self.action_value[r]
-            self.greedy_policy[r] = np.argmax(curr_row)
+            for a in range(self.n_actions):
+                if a != greedy_action:
+                    self.soft_policy[s][a] = self.epsilon
+                else:
+                    self.soft_policy[s][a] = 1 - \
+                            (self.n_actions - 1) * self.epsilon
 
-    
-    def normalize_matrix_axis(self, matrix, axis):
-        if axis == matrix.shape[-1]:
-            print('Cannot normalize the last axis of the matrix.')
-            raise RuntimeError
 
-        for r in range(matrix.shape[axis]):
-            curr_parent_axis = matrix[r]
-            matrix[r] /= sum(curr_parent_axis)
-            assert sum(matrix[r]) >= 0.9999 and sum(matrix[r]) <= 1.0001
-
-    
-    def get_action_from_greedy_policy(self, curr_state):
-        return self.greedy_policy[curr_state]
+    def get_action_from_soft_policy(self, curr_state):
+        state_actions = self.soft_policy[curr_state]
+        return np.random.choice(self.n_actions, p=state_actions)
 
 
     def generate_episode(self):
@@ -60,7 +59,7 @@ class MonteCarloExploring:
         curr_state = episode.states[-1]
         while curr_state != self.end_state:
             curr_state = episode.states[-1]
-            curr_action = self.get_action_from_greedy_policy(curr_state)
+            curr_action = self.get_action_from_soft_policy(curr_state)
             episode.actions.append(curr_action)
 
             possible_next_states = self.transition_matrix[curr_state][curr_action]
@@ -108,4 +107,4 @@ class MonteCarloExploring:
                         np.average(self.returns[state][action])
                 
             # generate greedy policy again for next episode
-            self.greedy_policy_from_action_value()
+            self.soft_policy_from_action_value()
