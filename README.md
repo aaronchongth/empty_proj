@@ -1,5 +1,5 @@
 <h1 align="center" style="margin-bottom: 0;border-bottom: none;padding-bottom: 0;">
-  Everything related to coding
+  Anything related to coding
 </h1>
 <p align="center" style="font-size: 12px;">
     that seemed useful to me, languages, practices, building, other tips and tricks :sparkles:
@@ -14,7 +14,7 @@
   <a href="languages/javascript/">javascript</a>
 </p>
 
-## Workflow
+<!-- ## Workflow
 
 * [Git](workflows/git.md) - TODO
 * [Docker](workflows/docker.md) - TODO
@@ -28,4 +28,4 @@
 
 ## Algorithms
 
-[List of algorithms](algorithms/) that were implemented for practice, during real interviews as well as real world applications (typically in robotics). Good for refreshing concepts, everyday coding exercise and interview preparations. 
+[List of algorithms](algorithms/) that were implemented for practice, during real interviews as well as real world applications (typically in robotics). Good for refreshing concepts, everyday coding exercise and interview preparations.  -->
