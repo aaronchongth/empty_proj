@@ -1,7 +1,8 @@
-<h1 align="center">
-  Everything related to coding <br>
-  <span><h3 align="center">That seemed useful to me<h3></span><br>
-  <span><h3 align="center">Languages, Practices, Building, other tips and tricks<h3></span>
+<h1 align="center">Everything related to coding</h1>
+<h3 align="center">
+    That seemed useful to me
+    <br>
+    Languages, Practices, Building, other tips and tricks
 </h1>
 
 ## Languages
