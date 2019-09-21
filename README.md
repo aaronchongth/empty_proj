@@ -6,9 +6,9 @@
 
 ## Languages
 
-* [C++]()
-* [Python]()
-* [Javascript]()
+* [C++](languages/cpp)
+* [Python](languages/python)
+* [Javascript](languages/javascript)
 
 ---
 
