@@ -6,10 +6,13 @@
 </p>
 
 <h3 align="center" style="margin-bottom: 0;border-bottom: none;padding-bottom: 0;">
+  Languages
+</h3>
+<p align="center">
   <a href="languages/cpp/">c++</a> -
   <a href="languages/python/">python</a> -
   <a href="languages/javascript/">javascript</a>
-</h3>
+</p>
 
 ## Workflow
 
