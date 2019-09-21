@@ -5,27 +5,36 @@
     that seemed useful to me, languages, practices, building, other tips and tricks :sparkles:
 </p>
 
-<h3 align="center" border="none">
+<h2 align="center" border="none">
   Languages
-</h3>
+</h2>
 <p align="center">
-  <a href="languages/cpp/">c++</a> -
-  <a href="languages/python/">python</a> -
+  <a href="languages/cpp/">c++</a> *
+  <a href="languages/python/">python</a> *
   <a href="languages/javascript/">javascript</a>
 </p>
 
-<!-- ## Workflow
+<h2 align="center" border="none">
+  Workflow
+</h2>
+<p align="center">
+  <a href="workflows/git.md">git</a> *
+  <a href="workflows/docker.md">docker</a> *
+  <a href="workflows/webdev.md">web development</a>
+</p>
 
-* [Git](workflows/git.md) - TODO
-* [Docker](workflows/docker.md) - TODO
-* [Web development](workflows/webdev.md) - TODO
+<h2 align="center" border="none">
+  Setup scripts and config files
+</h2>
+<p align="center">
+  <a href="configs/ros_setup.md">ROS</a> *
+  <a href="configs/basic_vimrc">vim</a> *
+  <a href="configs/vs_code_settings.json">VS code</a>
+</p>
 
-## Setup scripts and config files
-
-* [ROS setup](ros_setup.md) - TODO
-* [`vimrc` config](configs/basic_vimrc)
-* [Visual Studio Code config](configs/vs_code_settings.json)
-
-## Algorithms
-
-[List of algorithms](algorithms/) that were implemented for practice, during real interviews as well as real world applications (typically in robotics). Good for refreshing concepts, everyday coding exercise and interview preparations.  -->
+<h2 align="center" border="none">
+  Algorithms
+</h2>
+<p align="center">
+  <a href="algorithms/">List of algorithms</a> that were implemented for practice, during real interviews as well as real world applications (typically in robotics). Good for refreshing concepts, everyday coding exercise and interview preparations.
+</p>
