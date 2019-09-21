@@ -1,6 +1,8 @@
-<h1 align="center" border="none">
-  Anything related to coding
-</h1>
+<h3>
+  <h3 align="center" border="none">
+    Anything related to coding
+  </h3>
+</h3>
 <p align="center">
     that seemed useful to me, languages, practices, building, other tips and tricks :sparkles:
 </p>
