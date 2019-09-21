@@ -1,9 +1,13 @@
-<h1 align="center">Everything related to coding</h1>
-<p align="center">
-    that seemed useful to me
-    <br>
-    languages, practices, building, other tips and tricks
+<h1 align="center" style="margin-bottom: 0;border-bottom: none;padding-bottom: 0;">
+  Everything related to coding
+</h1>
+<p align="center" style="font-size: 12px;">
+    that seemed useful to me, languages, practices, building, other tips and tricks :sparkles:
 </p>
+
+<div>
+  <span><h3>Languages</h3></span> - C++, Python, Javascript
+</div>
 
 ## Languages
 
