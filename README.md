@@ -1,4 +1,4 @@
-<h1 align="center" style="border:none;margin:0px;">
+<h1 align="center">
   Anything related to coding
 </h1>
 <p align="center">
