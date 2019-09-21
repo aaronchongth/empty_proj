@@ -5,15 +5,11 @@
     that seemed useful to me, languages, practices, building, other tips and tricks :sparkles:
 </p>
 
-<div>
-  <span><h3>Languages</h3></span> - C++, Python, Javascript
-</div>
-
-## Languages
-
-* [C++](languages/cpp/) - TODO
-* [Python](languages/python/) - TODO
-* [Javascript](languages/javascript/) - TODO
+<h3 align="center" style="margin-bottom: 0;border-bottom: none;padding-bottom: 0;">
+  <a href="languages/cpp/">c++</a> -
+  <a href="languages/python/">python</a> -
+  <a href="languages/javascript/">javascript</a>
+</h3>
 
 ## Workflow
 
