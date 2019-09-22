@@ -1,6 +1,6 @@
-# threads and any other related topics :loop:
+# threads and any other related topics :speedboat:
 
-## threads
+## threads :loop:
 
 * keeping a bunch of threads alive, 
 
@@ -43,7 +43,7 @@ if (status == std::future_status::ready)
 t.join();
 ```
 
-## mutex and locks
+## mutex and locks :lock:
 
 * don't forget about `std::mutex` and `std::unique_lock<std::mutex>` for shared memory across threads
 
