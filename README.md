@@ -11,7 +11,8 @@
 <p align="center">
   <a href="languages/cpp/">c++</a> <span>&#183;</span>
   <a href="languages/python/">python</a> <span>&#183;</span>
-  <a href="languages/javascript/">javascript</a>
+  <a href="languages/javascript/">javascript</a> <span>&#183;</span>
+  <a href="languages/dart/">dart</a>
 </p>
 
 <h3 align="center">

@@ -6,8 +6,7 @@
 * `bootstrap` is awesome for frontend development
 * `font awesome` is great for vector icons
 * `jQuery` is pretty good for manipulating front-end using `javascript`
-
-TODO: finish learning then add backend stuff
+* backend stuff :hammer:
 
 ## starter html
 

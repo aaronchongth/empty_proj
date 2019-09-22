@@ -1,13 +1,19 @@
-# C++ topics and mini optimizations
+# C++ topics and mini optimizations :rocket:
 
-* `cmake` - [notes](topics/cmake.md) :hammer:
+* `cxxopts` - light-weight C++ options and arguments handler, [reference](https://github.com/jarro2783/cxxopts) and [notes](topics/cxxopts.md) :hammer:
 
-* `cxxopts` - [notes](topics/cxxopts.md) :hammer:
+* `emplace_back` for `std::vector` - tiny optimization of vectorized objects, [reference](https://en.cppreference.com/w/cpp/container/vector/emplace_back), [example](https://stackoverflow.com/questions/48630349/how-do-i-create-multiple-c-threads-without-blocking-the-main-thread-using-join)
 
-* `emplace_back` for `std::vector` - [reference](https://en.cppreference.com/w/cpp/container/vector/emplace_back), [example](https://stackoverflow.com/questions/48630349/how-do-i-create-multiple-c-threads-without-blocking-the-main-thread-using-join)
+* `explicit` keyword - for class constructors when to use it, and why, [reference](https://stackoverflow.com/questions/121162/what-does-the-explicit-keyword-mean)
 
-* `explicit` keyword - [reference](https://stackoverflow.com/questions/121162/what-does-the-explicit-keyword-mean)
+* `std::thread` - multithreading operations and shared access memory safety, [notes](topics/threads.md)
 
-* `std::thread` - [notes](topics/threads.md)
+* `template` - writing code that handles varying interfaces, and how to write great libraries, [notes](topics/template.md)
 
-* `template` - [notes](topics/template.md)
+## Tools :wrench:
+
+* `cmake` - everyone's favorite build tool, [notes](topics/cmake.md) :hammer:
+
+* `bazel` - build tool that Google released, [notes](topics/bazel.md) :hammer:
+
+* `gtest` - test tool for unit testing, sometimes also known as Google Test, [introduction](https://www.youtube.com/watch?v=16FI1-d2P4E) and [notes](topics/gtest.md) :hammer:
