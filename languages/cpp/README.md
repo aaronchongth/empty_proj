@@ -4,4 +4,4 @@
 
 * `explicit` keyword - [reference](https://stackoverflow.com/questions/121162/what-does-the-explicit-keyword-mean)
 
-* `std::thread`s - [notes](languages/cpp/topics/threads.md)
+* `std::thread` - [notes](topics/threads.md)
