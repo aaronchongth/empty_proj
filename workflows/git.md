@@ -2,7 +2,7 @@
 
 Parts of the documentation may only be applicable to `github`, but `git` commands in general should be universal.
 
-## TL;DR
+## tl;dr
 
 * Development workflow
 
@@ -32,7 +32,7 @@ git merge master
 git push
 ```
 
-## Notes
+## notes
 
 * conflicts can be easily resolved using tools or IDEs, Visual Studio code has a nice interface for it
 
@@ -40,7 +40,7 @@ git push
 
 * use a combination of `issues` and `gist.github.com` to raise bugs or concerns to the developers, always include instructions to replicate the problem, build instructions and all other relevant information
 
-## README
+## readme
 
 READMEs are mostly written in `markdown`, but may include `html` as well. No `css` though, to prevent any unwanted code injection, the `github` team has written a `sanitizer` which strips the `.md` file and leaves only the allowed elements and attributes behind. More information can be gathered from these two sources,
 
