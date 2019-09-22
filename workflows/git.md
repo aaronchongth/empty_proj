@@ -6,7 +6,7 @@ Parts of the documentation may only be applicable to `github`, but `git` command
 
 * Development workflow
 
-```
+```bash
 git clone https://<repo url>                                # public repository
 git clone ssh://git@github.com/<repo owner>/<repo name>     # private repository with access
 
@@ -21,7 +21,7 @@ git push                                                    # push to the remote
 
 * preparing for pull request, merging will allow you to run regression tests so you don't break stuff
 
-```
+```bash
 git checkout master
 git pull
 git checkout <new feature branch>
