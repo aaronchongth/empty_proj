@@ -1,4 +1,33 @@
-# threads :loop:
+# threads and any other related topics :loop:
+
+* don't forget about `std::mutex` and `std::unique_lock<std::mutex>` for shared memory across threads
+
+* avoid using `std::lock<std::mutex>`, because it will rely on lock and unlock pairs, use `std::unique_lock<std::mutex>` instead
+
+* for non-critical operations that could be skipped (for example, printing stuff out), if the shared memory is alreedy locked, use `std::defer_lock`
+
+```cpp
+std::unique_lock<std::mutex> non_critical_lock(mutex, std::defer_lock);
+if (!non_critical_lock.try_lock())
+{
+  // continue without performing the non-critical operation
+  return;
+}
+// otherwise, lock was acquired, continue with operations on shared memory
+```
+
+* try to keep the operations after `lock`s as small as possible, use scopes if necessary
+
+```cpp
+if (someBool)
+{
+  {
+    std::unique_lock<std::mutex> mem_lock(mem_mutex);
+    foo.tiny_operation(); // small operation that reads or writes the shared memory
+  }
+  foo.bigger_operation(); // other operations that don't need it
+}
+```
 
 * keeping a bunch of threads alive, 
 
