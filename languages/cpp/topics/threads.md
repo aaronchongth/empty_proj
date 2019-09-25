@@ -43,7 +43,9 @@ if (status == std::future_status::ready)
 t.join();
 ```
 
-## mutex and locks :lock:
+For a more comprehensive example on spawning threads, packaging tasks and getting the return values of the thread function, check out [here](../example_threading/), and its [source code](../example_threading/src/main.cpp).
+
+## mutex and locks :lock
 
 * don't forget about `std::mutex` and `std::unique_lock<std::mutex>` for shared memory across threads
 
