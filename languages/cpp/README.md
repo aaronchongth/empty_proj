@@ -16,4 +16,6 @@
 
 * `bazel` - build tool that Google released, [notes](topics/bazel.md) :hammer:
 
-* `gtest` - test tool for unit testing, sometimes also known as Google Test, [introduction](https://www.youtube.com/watch?v=16FI1-d2P4E) and [notes](topics/gtest.md) :hammer:
+* `gtest` - test tool for unit testing, sometimes also known as Google Test, [introduction](https://www.youtube.com/watch?v=16FI1-d2P4E) and [notes](topics/gtest.md)
+
+* `doxygen` - for documentation, can be used for other languages as well, [wholesome introduction](https://www.youtube.com/watch?v=TtRn3HsOm1s), [reference](http://www.doxygen.nl/index.html), [wiki example](https://en.wikipedia.org/wiki/Doxygen)
