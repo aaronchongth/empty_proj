@@ -21,7 +21,8 @@
 <p align="center">
   <a href="workflows/git.md">git</a> <span>&#183;</span>
   <a href="workflows/docker.md">docker</a> <span>&#183;</span>
-  <a href="workflows/webdev.md">web development</a>
+  <a href="workflows/webdev.md">web-dev</a> <span>&#183;</span>
+  <a href="workflows/appdev.md">app-dev</a>
 </p>
 
 <h3 align="center">
