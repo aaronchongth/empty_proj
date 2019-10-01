@@ -1,7 +1,7 @@
 # docker :school_satchel: :whale:
 
 <div align="center">
-  <b>It works on my machine.</b>
+	<img width="400" src="/resources/docker_meme_0.jpg">
 </div>
 
 <p align="center">
@@ -29,7 +29,7 @@ These notes cover basic applications, while more advanced features of Docker sho
 - [Running docker container in the background](#running-docker-container-in-the-background)
 - [Docker port mapping](#docker-port-mapping)
 - [Docker mount](#docker-mount)
-- [Create Docker image example](#create-docker-image-example)
+- [Create docker image example](#create-docker-image-example)
 
 ## Installation
 
@@ -201,7 +201,7 @@ sqlite3 test.db
 
 The database `test.db` should also be found on the host path, `/root/hostdb`.
 
-## Create Docker image example
+## Create docker image example
 
 Creating docker images will allow others easy access to your application. In this example a `hello-world` web application using `flask` will be created using the `ubuntu` docker image, after the installation of its dependencies.
 
