@@ -1,7 +1,7 @@
 # docker :school_satchel: :whale:
 
 <div align="center">
-	<img width="400" src="/resources/docker_meme_0.jpg">
+	<img width="300" src="/resources/docker_meme_0.jpg">
 </div>
 
 <p align="center">
