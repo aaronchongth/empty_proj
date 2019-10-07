@@ -31,3 +31,13 @@
 * [Algorithm in C++](https://github.com/TheAlgorithms/C-Plus-Plus)
 
 * [GUI in C++, imgui](https://github.com/ocornut/imgui)
+
+* [Rule of zero](http://scottmeyers.blogspot.com/2014/03/a-concern-about-rule-of-zero.html)
+
+* [Rule of zero - 2](https://cpppatterns.com/patterns/rule-of-zero.html#line7)
+
+* [Pimpl pattern](https://dzone.com/articles/the-pimpl-pattern-what-you-should-know)
+
+* [Pimpl and rule of zero](http://oliora.github.io/2015/12/29/pimpl-and-rule-of-zero.html)
+
+* [Most vexing parse](https://en.wikipedia.org/wiki/Most_vexing_parse), [example](https://stackoverflow.com/questions/19615659/c-default-constructor-not-being-called)

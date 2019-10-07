@@ -51,3 +51,7 @@ This workflow will be in note-taking form, as I am pretty much starting from scr
 * [Intensify powerful UIs](https://medium.com/flutter-community/master-flutter-essentials-intensify-powerful-uis-d2e2aa6c79b8)
 
 * [Responsive UI for Learning Platform App](https://medium.com/flutter-community/flutter-responsive-ui-for-learning-platform-app-2df185f86e8e)
+
+* [Note-taking app](https://medium.com/aubergine-solutions/creating-a-note-taking-app-in-flutter-dart-f50852993cd0)
+
+* [Handwriting number recognizer with Tensorflow](https://medium.com/flutter-community/handwriting-number-recognizer-with-flutter-and-tensorflow-part-i-414157b7574f)

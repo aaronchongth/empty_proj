@@ -62,3 +62,5 @@ The code below includes a whole bunch of boilerplate code that includes the tool
 * [Node best practices](https://github.com/goldbergyoni/nodebestpractices)
 
 * [Create an API to deploy ML models using Flask and Heroku](https://towardsdatascience.com/create-an-api-to-deploy-machine-learning-models-using-flask-and-heroku-67a011800c50)
+
+* [Painless Node.js authentication](https://developer.okta.com/blog/2019/10/03/painless-node-authentication)
