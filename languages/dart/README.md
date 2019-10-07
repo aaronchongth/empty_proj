@@ -1,3 +1,7 @@
 # the Dart language and flutter development :dart:
 
 :hammer:
+
+## upcoming references
+
+* [Dart-2.5](https://medium.com/dartlang/announcing-dart-2-5-super-charged-development-328822024970)

@@ -19,3 +19,15 @@
 * `gtest` - test tool for unit testing, sometimes also known as Google Test, [introduction](https://www.youtube.com/watch?v=16FI1-d2P4E) and [notes](topics/gtest.md)
 
 * `doxygen` - for documentation, can be used for other languages as well, [wholesome introduction](https://www.youtube.com/watch?v=TtRn3HsOm1s), [reference](http://www.doxygen.nl/index.html), [wiki example](https://en.wikipedia.org/wiki/Doxygen)
+
+## upcoming references :hammer:
+
+* [Entity-component system](https://github.com/skypjack/entt)
+
+* [libuv wrapper](https://github.com/skypjack/uvw)
+
+* [Python bindings, Pybind11](https://github.com/pybind/pybind11)
+
+* [Algorithm in C++](https://github.com/TheAlgorithms/C-Plus-Plus)
+
+* [GUI in C++, imgui](https://github.com/ocornut/imgui)
