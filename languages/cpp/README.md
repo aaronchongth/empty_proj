@@ -20,6 +20,8 @@
 
 * `doxygen` - for documentation, can be used for other languages as well, [wholesome introduction](https://www.youtube.com/watch?v=TtRn3HsOm1s), [reference](http://www.doxygen.nl/index.html), [wiki example](https://en.wikipedia.org/wiki/Doxygen)
 
+* `protobuf` - stands for protocol buffers, great alternative to JSONs for storing and compressing data. [Reference](https://developers.google.com/protocol-buffers/docs/cpptutorial) and [basic example](https://github.com/shaochuan/cmake-protobuf-example), a [fix](https://github.com/shaochuan/cmake-protobuf-example/issues/3) for now. A better example with CMake will be featured here soon :hammer:
+
 ## upcoming references :hammer:
 
 * [Entity-component system](https://github.com/skypjack/entt)
