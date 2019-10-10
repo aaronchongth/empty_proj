@@ -11,4 +11,3 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 add_executable(main main.cpp)
 set_property(TARGET main PROPERTY CXX_STANDARD_17)
 target_link_libraries(main proto ${PROTOBUF_LIBRARIES})
-
