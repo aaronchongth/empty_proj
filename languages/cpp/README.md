@@ -43,3 +43,15 @@
 * [Pimpl and rule of zero](http://oliora.github.io/2015/12/29/pimpl-and-rule-of-zero.html)
 
 * [Most vexing parse](https://en.wikipedia.org/wiki/Most_vexing_parse), [example](https://stackoverflow.com/questions/19615659/c-default-constructor-not-being-called)
+
+## Protobuf
+
+`Protobuf`, also known as Protocol Buffers, was introduced by Google. It has a lot of different uses, but I mainly learnt it for its message serialization and IO related functionalities. However I would also like to point out other gotchas.
+
+* [guides and references](https://developers.google.com/protocol-buffers/docs/cpptutorial) - there are plenty of these online, the official one is best IMO
+
+* [installation](example_protobuf) - some installation instructions and setup
+
+* [example](example_protobuf) - diving in, here is an example `cmake` project, mainly following the guides given online, but with some tweaks for styling and safety.
+
+* [syntax](https://www.crankuptheamps.com/blog/posts/2017/10/12/protobuf-battle-of-the-syntaxes/#) - note that there are major differences between syntax `proto2` and `proto3`.
