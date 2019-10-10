@@ -1,5 +1,5 @@
 <h1 align="center">
-  Protobuf example
+  Protocol Buffers example
 </h1>
 
 <p align="center">
@@ -7,6 +7,8 @@
     <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg">
   </a>
 </p>
+
+This example is written mainly based on the example given on official `protobuf` C++ references, however I added some tweaks to it for styling and safety preferences. Namely avoiding the use of raw pointers as much as possible, while passing ownership using `set_allocated_<>(...)`.
 
 ## Project Structure
 

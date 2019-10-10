@@ -18,10 +18,17 @@ syntax = "proto2";
 
 package example_package;
 
+message School {
+  required string name = 1;
+  required uint32 graduate_year = 2;
+}
+
 message Person {
   required string name = 1;
   required int32 id = 2;
   optional string email = 3;
+
+  required School high_school = 4;
 
   enum PhoneType {
     MOBILE = 0;
@@ -34,7 +41,7 @@ message Person {
     optional PhoneType type = 2 [default = HOME];
   }
 
-  repeated PhoneNumber phones = 4;
+  repeated PhoneNumber phones = 5;
 }
 
 message AddressBook {
