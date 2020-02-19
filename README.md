@@ -29,7 +29,7 @@
   Setup scripts and config files
 </h3>
 <p align="center">
-  <a href="configs/ros_setup.md">ROS</a> <span>&#183;</span>
+  <a href="configs/bashrc">bashrc</a> <span>&#183;</span>
   <a href="configs/basic_vimrc">vim</a> <span>&#183;</span>
   <a href="configs/vs_code_settings.json">VS code</a>
 </p>
