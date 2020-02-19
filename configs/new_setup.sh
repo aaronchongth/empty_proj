@@ -4,11 +4,13 @@ sudo apt-get update
 sudo apt-get upgrade
 
 sudo apt-get install \
-  gcc cmake make \
+  gcc cmake make wget \
   build-essentials \
   vim git unzip \
   snapd openvpn \
   openssh-client openssh-server \
+  python3-vcstool \
+  libeigen3-dev \
   -y
 
 # vscodium
