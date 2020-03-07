@@ -29,6 +29,8 @@
   Setup scripts and config files
 </h3>
 <p align="center">
+  <a href="configs/new_setup.sh">New Setup</a> <span>&#183;</span>
+  <a href="configs/snap_setup.sh">Snap Setup</a> <span>&#183;</span>
   <a href="configs/bashrc">bashrc</a> <span>&#183;</span>
   <a href="configs/basic_vimrc">vim</a> <span>&#183;</span>
   <a href="configs/vs_code_settings.json">VS code</a>

@@ -1,13 +1,13 @@
 #!/bin/bash
 
 sudo snap install \
+  keepassxc \
+  chromium \
   telegram-desktop \
   whatsdesk \
   spotify \
-  vlc \
-
+  vlc
 
 sudo snap install \
   slack \
   --classic
-
