@@ -11,7 +11,7 @@ sudo apt-get install \
   openssh-client openssh-server \
   python3-vcstool \
   libeigen3-dev \
-  htop \
+  htop ffmpeg \
   -y
 
 # vscodium
