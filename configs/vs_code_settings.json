@@ -14,7 +14,7 @@
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.minimap.showSlider": "always",
     "editor.rulers": [
-        100
+        80
     ],
     "editor.fontFamily": "Ubuntu Mono",
     // Formatting
