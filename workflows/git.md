@@ -22,14 +22,39 @@ git push                                                    # push to the remote
 * preparing for pull request, merging will allow you to run regression tests so you don't break stuff
 
 ```bash
-git checkout master
+git checkout main
 git pull
 git checkout <new feature branch>
-git merge master
+git merge main
 
 # resolve conflicts
 
 git push
+```
+
+* this is the preferred workflow when lots of people are working on the same project
+
+```bash
+git checkout <new feature branch>
+git fetch
+git rebase --interactive main
+
+# resolve conflicts
+git add <the stuff that changed>
+git rebase --continue
+# repeat until all is done
+
+git push --force origin <new feature branch>
+```
+
+* for all the GPG stuff, remember to sign it with `-S` during commit, that is different from `--sign-off`
+
+* to fix signing the previous commit
+
+```bash
+git commit --amend --no-edit -S --signoff
+git push
+# if this is part of rebase, do force-push
 ```
 
 ## notes
