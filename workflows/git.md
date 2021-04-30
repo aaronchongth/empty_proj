@@ -57,6 +57,13 @@ git push
 # if this is part of rebase, do force-push
 ```
 
+* to fix signing a number of previous commits
+
+```bash
+git rebase -i -x "git commit --amend --no-edit -S -s" HEAD~n
+# Where n is the number of commits you didn't sign
+```
+
 ## notes
 
 * conflicts can be easily resolved using tools or IDEs, Visual Studio code has a nice interface for it
