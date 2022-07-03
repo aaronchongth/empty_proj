@@ -1,6 +1,8 @@
 use serde::{Deserialize, Serialize};
+use serde::de::{DeserializeOwned};
 // use serde_json::Result;
 use std::collections::HashMap;
+use std::error::Error;
 
 pub trait StateComponent {
     fn name(&self) -> String;
@@ -66,9 +68,36 @@ impl Client {
     }
 
     pub fn print_state_json(self: &Client) {
-        println!("{}", serde_json::to_string(&self.state).unwrap());
+        let serde_json_string: String = serde_json::to_string(&self.state).unwrap();
+        println!("{}", serde_json_string);
+
+        let m: HashMap<String, String> = serde_json::from_str(&serde_json_string).unwrap();
+        for (k, v) in m.iter() {
+            println!("found state component: {}", k);
+            deserialize_it_please(v.to_string());
+        }
     }
 }
+
+fn deserialize_it_please<T: DeserializeOwned>(input: String) -> Result<Box<T>, Box<dyn Error>> {
+    let deserialized: Box<T> = serde_json::from_str(&input).unwrap();
+    println!("Deserialized! I hope");
+
+    // now let's try serializing it again
+    let serialize_again: String = serde_json::to_string(&deserialized).unwrap();
+    println!("Serialized again: {}", serialize_again);
+
+    return Ok(deserialized);
+}
+
+// fn readfile<T: de::DeserializeOwned>(filename: String) -> Result<Box<T>, Box<std::error::Error>> {
+//     let f = std::fs::File::open(filename)?;
+//     let config_data: Outer<T> = serde_yaml::from_reader(f)?;
+//     match config_data.ptr {
+//         Ptr::Owned(data) => Ok(data),
+//         _ => unimplemented!(),
+//     }
+// }
 
 fn main() {
     // let data = r#"
@@ -103,7 +132,11 @@ fn main() {
 }
 
 // Things to implement
+// * Standardize state
+// * Allow additional states
 // * Duplicate StateComponents
 // * Worker trait with run async
 // * Middleware, using paho_mqtt
 // * Always use Result
+// * TF support for ros 2 (ROS 1 listener works)
+// * rclcpp_action support for ROS 2
