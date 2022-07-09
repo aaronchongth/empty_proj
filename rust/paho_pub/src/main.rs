@@ -11,7 +11,7 @@ fn main() {
     // Command-line option(s)
     let host = env::args()
         .nth(1)
-        .unwrap_or_else(|| "tcp://broker.emqx.io:1883".to_string());
+        .unwrap_or_else(|| "tcp://localhost:1883".to_string());
 
     // Create the client
     let cli = mqtt::AsyncClient::new(host).unwrap_or_else(|err| {
@@ -26,7 +26,7 @@ fn main() {
 
         // Create a message and publish it
         println!("Publishing a message on the topic 'test'");
-        let msg = mqtt::Message::new("test", "Hello Rust MQTT world!", mqtt::QOS_1);
+        let msg = mqtt::Message::new("hello", "Hello Rust MQTT world!", mqtt::QOS_1);
         cli.publish(msg).await?;
 
         // Disconnect from the broker
