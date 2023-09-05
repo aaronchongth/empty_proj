@@ -42,7 +42,11 @@ def scale_mesh_and_save_to(mesh_path, scale, to_path):
 
 
 def main(argv=sys.argv):
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        description='This assumes that all the models were downloaded from Gazebo'
+                    ' Fuel as zip files, located in the same directory. With the'
+                    ' mesh files under the path MODEL/meshes/model.obj.'
+    )
     parser.add_argument(
         '-i', '--input',
         help='Path to directory holding all downloaded fuel model zip files')
