@@ -36,7 +36,9 @@ def extract_mesh_from_zip(path, to_path):
 def scale_mesh_and_save_to(mesh_path, scale, to_path):
     mesh = trimesh.load(mesh_path)
     scaled_mesh = mesh.apply_scale(scale)
-    trimesh.exchange.export.export_mesh(scaled_mesh, to_path, 'obj')
+    mesh_name = os.path.splitext(os.path.basename(mesh_path))[0]
+    export_path = os.path.join(to_path, mesh_name + '.obj')
+    trimesh.exchange.export.export_mesh(scaled_mesh, export_path, 'obj')
 
 
 def main(argv=sys.argv):
@@ -53,6 +55,7 @@ def main(argv=sys.argv):
     parser.add_argument(
         '-s', '--scale', type=int, default=1,
         help='Scales the meshes')
+    args = parser.parse_args(argv[1:])
 
     if not os.path.isdir(args.input):
         print(f'Input directory does not exist: {args.input}')
@@ -75,29 +78,15 @@ def main(argv=sys.argv):
     unzip_dir = tempfile.mkdtemp() if to_perform_scaling else args.output
     selected_len = len(selected_zips)
     for i in range(selected_len):
-        zip_path = selected_zips[i]
+        zip_file = selected_zips[i]
+        zip_path = os.path.join(args.input, zip_file)
         extracted_path = extract_mesh_from_zip(zip_path, unzip_dir)
         print(f'{i}/{selected_len}: Extracting mesh from {zip_path} to {extracted_path}...')
 
         if to_perform_scaling:
-            saved_path = scale_mesh_and_save_to(extracted_path, args.output)
+            saved_path = scale_mesh_and_save_to(extracted_path, args.scale, args.output)
             print(f'    Scaling {extracted_path} by {args.scale}, saving to {saved_path}...')
 
 
 if __name__ == '__main__':
     main(sys.argv)
-
-    # target_dir = 'to_intake'
-    # from_dir = 'from_fuel'
-    # random_picked = pick_files_randomly(from_dir, 20)
-    # for x in random_picked:
-    #     old_path = os.path.join(from_dir, x)
-    #     new_path = os.path.join(target_dir, x)
-    #     shutil.move(old_path, new_path)
-
-    # unzip_dir = 'to_unzip'
-    # target_dir = 'to_intake'
-    # zips = os.listdir(unzip_dir)
-    # for z in zips:
-    #     extract_mesh_from_zip(os.path.join(unzip_dir, z), target_dir)
-
