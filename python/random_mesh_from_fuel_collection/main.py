@@ -18,7 +18,7 @@ def pick_files_randomly(dir_path, number, extension=None):
     else:
         for file in files:
             targets.append(file)
-    return random.choices(targets, k=number)
+    return random.sample(targets, k=number)
 
 
 def extract_mesh_from_zip(path, to_path):
