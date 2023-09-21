@@ -8,11 +8,15 @@ import trimesh
 from zipfile import ZipFile
 
 
-def scale_mesh_and_save_to(mesh_path, scale, to_path):
+def scale_mesh_and_save_to(mesh_path, scale, to_path, max_mesh_name_length):
     mesh = trimesh.load(mesh_path)
     scaled_mesh = mesh.apply_scale(scale)
     mesh_name = os.path.splitext(os.path.basename(mesh_path))[0]
-    export_path = os.path.join(to_path, mesh_name + '.obj')
+
+    # Trim file name without extension
+    trimmed_mesh_name = mesh_name[:(max_mesh_name_length - 4)]
+
+    export_path = os.path.join(to_path, trimmed_mesh_name + '.obj')
     trimesh.exchange.export.export_mesh(scaled_mesh, export_path, 'obj')
     return export_path
 
@@ -32,6 +36,9 @@ def main(argv=sys.argv):
     parser.add_argument(
         '-s', '--scale', type=int, default=1,
         help='Scales the meshes')
+    parser.add_argument(
+        '-l', '--max-mesh-name-length', type=int, default=50,
+        help='Number of meshes to collect')
     args = parser.parse_args(argv[1:])
 
     if not os.path.isdir(args.input):
@@ -45,7 +52,7 @@ def main(argv=sys.argv):
     meshes = os.listdir(args.input)
     for m in meshes:
         import_path = os.path.join(args.input, m)
-        export_path = scale_mesh_and_save_to(import_path, args.scale, args.output)
+        export_path = scale_mesh_and_save_to(import_path, args.scale, args.output, args.max_mesh_name_length)
         print(f'    Scaling {m} by {args.scale}, saving to {export_path}...')
 
 
