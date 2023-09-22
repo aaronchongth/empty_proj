@@ -10,7 +10,11 @@ from zipfile import ZipFile
 
 def scale_mesh_and_save_to(mesh_path, scale, to_path, max_mesh_name_length):
     mesh = trimesh.load(mesh_path)
-    scaled_mesh = mesh.apply_scale(scale)
+    try:
+        scaled_mesh = mesh.apply_scale(scale)
+    except:
+        return None
+
     mesh_name = os.path.splitext(os.path.basename(mesh_path))[0]
 
     # Trim file name without extension
@@ -53,8 +57,10 @@ def main(argv=sys.argv):
     for m in meshes:
         import_path = os.path.join(args.input, m)
         export_path = scale_mesh_and_save_to(import_path, args.scale, args.output, args.max_mesh_name_length)
-        print(f'    Scaling {m} by {args.scale}, saving to {export_path}...')
-
+        if export_path is not None:
+            print(f'    Scaling {m} by {args.scale}, saving to {export_path}...')
+        else:
+            print(f'    Failed to scale {m}, skipping...')
 
 if __name__ == '__main__':
     main(sys.argv)
