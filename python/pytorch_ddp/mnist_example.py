@@ -160,7 +160,7 @@ def main(argv=sys.argv):
 
     process = Process(
         target=partial(init_process, master_ip=args.master_ip, master_port=args.master_port),
-        args=(rank, size, run)
+        args=(args.rank, args.size, run)
     )
     process.start()
     process.join()
