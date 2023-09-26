@@ -159,8 +159,8 @@ def main(argv=sys.argv):
     args = parser.parse_args(argv[1:])
 
     process = Process(
-        target=partial(init_process, master_ip=args.master_ip, master_port=args.master_port),
-        args=(args.rank, args.size, run)
+        target=init_process,
+        args=(args.master_ip, args.master_port, args.rank, args.size, run)
     )
     process.start()
     process.join()
