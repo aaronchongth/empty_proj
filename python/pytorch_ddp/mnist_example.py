@@ -100,26 +100,29 @@ def average_gradients(model):
     """ Gradient averaging. """
     size = float(dist.get_world_size())
     for param in model.parameters():
-        if type(param) is torch.Tensor:
-            dist.all_reduce(param.grad.data, op=dist.reduce_op.SUM, group=0)
-            param.grad.data /= size
+        dist.all_reduce(param.grad.data, op=dist.reduce_op.SUM)
+        param.grad.data /= size
 
 
-def run(rank, size):
+def run(rank, size, cuda):
     """ Distributed Synchronous SGD Example """
     torch.manual_seed(1234)
     train_set, bsz = partition_dataset()
+    device = torch.device('cuda') if cuda else None
     model = Net()
-    model = model
-#    model = model.cuda(rank)
+    if cuda:
+        model = model.to(device)
     optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.5)
 
     num_batches = ceil(len(train_set.dataset) / float(bsz))
     for epoch in range(10):
         epoch_loss = 0.0
         for data, target in train_set:
-            data, target = Variable(data), Variable(target)
-#            data, target = Variable(data.cuda(rank)), Variable(target.cuda(rank))
+            if cuda:
+                data, target = Variable(data).to(device), Variable(target).to(device)
+            else:
+                data, target = Variable(data), Variable(target)
+
             optimizer.zero_grad()
             output = model(data)
             loss = F.nll_loss(output, target)
@@ -132,12 +135,12 @@ def run(rank, size):
               epoch_loss / num_batches)
 
 
-def init_process(master_ip, master_port, rank, size, fn, backend='gloo'):
+def init_process(master_ip, master_port, rank, size, cuda, fn, backend='gloo'):
     """ Initialize the distributed environment. """
     os.environ['MASTER_ADDR'] = master_ip
     os.environ['MASTER_PORT'] = master_port
     dist.init_process_group(backend, rank=rank, world_size=size)
-    fn(rank, size)
+    fn(rank, size, cuda)
 
 
 def main(argv=sys.argv):
@@ -156,11 +159,12 @@ def main(argv=sys.argv):
     parser.add_argument(
         '--master-port', type=str, help='Port number of master process'
     )
+    parser.add_argument('--cuda', action='store_true')
     args = parser.parse_args(argv[1:])
 
     process = Process(
         target=init_process,
-        args=(args.master_ip, args.master_port, args.rank, args.size, run)
+        args=(args.master_ip, args.master_port, args.rank, args.size, args.cuda, run)
     )
     process.start()
     process.join()
