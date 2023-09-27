@@ -6,6 +6,7 @@ import argparse
 from functools import partial
 import os
 import sys
+import time
 import torch
 import torch.distributed as dist
 import torch.nn as nn
@@ -113,10 +114,12 @@ def run(rank, size, cuda):
     if cuda:
         model = model.to(device)
     optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.5)
-
+    
     num_batches = ceil(len(train_set.dataset) / float(bsz))
+    t_start = time.time()
     for epoch in range(10):
         epoch_loss = 0.0
+        e_start = time.time()
         for data, target in train_set:
             if cuda:
                 data, target = Variable(data).to(device), Variable(target).to(device)
@@ -130,9 +133,13 @@ def run(rank, size, cuda):
             loss.backward()
             average_gradients(model)
             optimizer.step()
+        e_stop = time.time()
         print('Rank ',
               dist.get_rank(), ', epoch ', epoch, ': ',
-              epoch_loss / num_batches)
+              epoch_loss / num_batches, ', took: ',
+              e_stop - e_start, 's')
+    t_stop = time.time()
+    print('On average each epoch took: ', (t_stop - t_start) / 10.0, 's')
 
 
 def init_process(master_ip, master_port, rank, size, cuda, fn, backend='gloo'):
