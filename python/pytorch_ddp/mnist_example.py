@@ -142,7 +142,7 @@ def run(rank, size, cuda):
     print('On average each epoch took: ', (t_stop - t_start) / 10.0, 's')
 
 
-def init_process(master_ip, master_port, rank, size, cuda, fn, backend='gloo'):
+def init_process(master_ip, master_port, rank, size, cuda, fn, backend='nccl'):
     """ Initialize the distributed environment. """
     os.environ['MASTER_ADDR'] = master_ip
     os.environ['MASTER_PORT'] = master_port
